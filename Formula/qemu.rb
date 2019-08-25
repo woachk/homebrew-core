@@ -34,6 +34,8 @@ class Qemu < Formula
   def install
     ENV["LIBTOOL"] = "glibtool"
 
+    # Upstream Qemu doesn't currently support Cocoa and SDL being built at
+    # the same time.
     args = %W[
       --prefix=#{prefix}
       --cc=#{ENV.cc}
@@ -44,7 +46,7 @@ class Qemu < Formula
       --enable-libssh
       --enable-vde
       --extra-cflags=-DNCURSES_WIDECHAR=1
-      --enable-cocoa
+      --disable-cocoa
       --enable-sdl
       --disable-gtk
     ]
