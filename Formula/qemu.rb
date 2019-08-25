@@ -22,8 +22,8 @@ class Qemu < Formula
   depends_on "lzo"
   depends_on "ncurses"
   depends_on "pixman"
-  depends_on "vde"
   depends_on "sdl2"
+  depends_on "vde"
 
   # 820KB floppy disk image file of FreeDOS 1.2, used to test QEMU
   resource "test-image" do
